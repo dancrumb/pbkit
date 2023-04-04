@@ -11,7 +11,7 @@ export default class Long extends Uint32Array {
     if (signed && (hi > 0x7FFFFFFF)) {
       return "-" + add(negate(this), one).toString(false);
     }
-    const result = [];
+    const result: number[] = [];
     let tmp = new Long(lo, hi);
     while (compare(tmp, zero)) {
       const [next, remainder] = divByTen(tmp);
